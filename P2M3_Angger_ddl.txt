@@ -1,0 +1,36 @@
+Flipkart Product Dataset : Analysis and Implementation Of Airflow
+
+ 
+by __Angger Rizky Firdaus__  
+This project is developed to accomplish milestone 3 of the FTDS Hacktiv8 program.  
+
+Dataset source : https://www.kaggle.com/datasets/san2deep/flipkart-product-dataset
+
+#SQL Syntax for making table
+DDL Syntax for making Table with defining column name, and row datatype :  
+CREATE TABLE table_m3(
+   id         INTEGER 
+  ,title      TEXT
+  ,"Rating"   NUMERIC
+  ,maincateg  VARCHAR
+  ,platform   VARCHAR
+  ,price1     INTEGER
+  ,actprice1  INTEGER
+  ,"Offer %"   VARCHAR
+  ,norating1  INTEGER 
+  ,noreviews1 INTEGER 
+  ,"star 5f"  INTEGER 
+  ,"star 4f"  INTEGER 
+  ,"star 3f"  INTEGER 
+  ,"star 2f"  INTEGER
+  ,"star 1f"  INTEGER
+  ,fulfilled1 INTEGER
+);
+
+
+Syntax DML for insert dataset from CSV:
+-- input data country dari csv
+COPY table_m3(id,title,"Rating",maincateg,platform,price1,actprice1,"Offer %",norating1,noreviews1,"star 5f","star 4f","star 3f","star 2f","star 1f",fulfilled1)
+FROM '/files/P2M3_Angger_data_raw.csv/P2M3_Angger_data_raw.csv'
+DELIMITER ','
+CSV HEADER;
